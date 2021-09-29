@@ -85,7 +85,10 @@
     }
 
     function onSubmit() {
-        fetch("example/send/" + input.val());
+        fetch("example/send", {
+            method: "POST",
+            body: input.val()
+        })
         template_idx = template_idx < templates.length - 1 ? template_idx + 1 : 0;
         input.val(templates[template_idx]);
     }
